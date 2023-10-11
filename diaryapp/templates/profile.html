@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <script src="https://kit.fontawesome.com/c323ca6c65.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+             background-color: palegreen;height:500px;width:800px;margin-left: 100px;position: fixed;
+        }
+        .b{
+            background-color: brown;height:350px;width:350px;padding: 20px,20px,20px,20px;
+
+        }
+        .c{background-color:lightblue;height:350px;width:350px;
+
+
+        }
+        .d{height:150px;width:150px;margin-left:940px;
+
+        }
+    </style>
+</head>
+<body style="background-color:skyblue;">
+    <form method="post">{% csrf_token %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid" style="background-color: pink;">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-left:80px;" href="http://127.0.0.1:8000/diaryapp/indexpage/"><h2>Home</h2></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/diaryapp/regi/" style="margin-left:130px;" target="_blank"><h2>
+                        Register</h2></a>
+                </li>
+                <a class="navbar-brand" style="margin-left:130px;" href="" target="_blank"><img src="{% static 'img.png' %}"
+                                                             style="height: 60px;width:130px;"></a>
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-left:130px;" href="http://127.0.0.1:8000/diaryapp/loginind1/" target="_blank"><h2>Login</h2></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-left:130px;" href="http://127.0.0.1:8000/diaryapp/adminlogin/" target="_blank"><h2>Admin Login</h2></a>
+                </li>
+
+
+            </ul>
+
+            <!--  -->
+
+
+        </div>
+
+    </div>
+</nav>
+    <div class="a" style="margin-top:50px;">
+
+        <div class="b" style="margin-left: 30px;margin-top:50px;padding-top:45px;"align="center">
+            <h3 style="color:blue;"><i><u>Account Details</u></i></h3><br>
+            <p><b>User name:{{a.uname}}</b></p>
+
+        <p><b>Email:{{a.em}}</b></p>
+            <p><b>Phone no: {{a.num}}</b></p>
+             <a href="http://127.0.0.1:8000/diaryapp/editacnt/{{a.id}}" style="height:40px;width:130px;margin-left: 10px;margin-top:10px;" class="btn btn-secondary" type="submit">Edit</a>
+        </div>
+            <div class="c" style="margin-left: 400px;margin-top:-350px;">
+
+                <a href="http://127.0.0.1:8000/diaryapp/News/" style="height:50px;width:200px;margin-left: 60px;margin-top:40px;" class="btn btn-outline-success" type="submit">NEW DIARY</a>
+                <a href="http://127.0.0.1:8000/diaryapp/Newsdisp/" style="height:50px;width:200px;margin-left: 60px;margin-top:40px;" class="btn btn-outline-danger" type="submit">VIEW DIARY</a>
+                <a href="http://127.0.0.1:8000/diaryapp/Newsuser/" style="height:50px;width:200px;margin-left: 60px;margin-top:40px;" class="btn btn-outline-info" type="submit">UPCOMING EVENTS</a>
+
+
+
+
+
+
+            </div>
+
+    </div>
+        <div class="container" id="d4">
+            <div class="d" >
+        <img  src="{% static im %}" height="150px" width="150px"
+        style="border-radius:50%;background-color:green;">
+
+                <a class="img" href="http://127.0.0.1:8000/diaryapp/editimage/{{a.id}}" target="_blank">
+                    <img src="{% static 'img_5.png' %}" style="height: 20px;margin-left:520x;"></a>
+    </div><br>
+    <h6 style="margin-left:940px;">Username:{{a.uname}}</h6>
+
+
+<!--            <a class="btn btn-success" style="margin-left:940px;" href="http://127.0.0.1:8000/bank_app/ministatement/{{a.id}}">MINI STATEMENT</a>-->
+            <a class="btn btn-outline-primary" style="margin-left:940px;margin-top:30px;" href="http://127.0.0.1:8000/diaryapp/wishdisp/">SAVED EVENTS</a>
+
+             <a class="btn btn-danger" style="margin-left:940px;margin-top:50px;" href="http://127.0.0.1:8000/diaryapp/Logout/">LOGOUT</a>
+
+
+
+
+        </div>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <style>
+     body {
+      background-image: url({% static 'loginbg.png' %});
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 630px;
+    }
+
+         .btn-grad {
+            background-image: linear-gradient(to right, #c21500 0%, #ffc500  51%, #c21500  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+
+  </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color:darkblue;margin-top:50px;font-size:70px;" align=center><u><b>LOGIN PAGE</b></u></h1>
+<div id="a" style="height:300px;width:700px;margin-left:300px;margin-top:110px;border-radius:90px;border:solid black 10px;background-color:palegreen;margin-top:50px;">
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+  <table align="center" style="padding-top:70px;" id="b">
+    <tr>
+      <th><label style="font-size:25px;">Enter Name :</label></th>
+      <td><input type="text" name="uname" placeholder="Enter user name"></td>
+    </tr>
+    <tr>
+      <th><label style="font-size:25px;">Password :</label></th>
+      <td><input type="password" name="pin" placeholder="Enter password"></td>
+    </tr>
+     <tr>
+            <th><a type="submit" href="http://127.0.0.1:8000/diaryapp/forgotpassword/"  style="margin-left:50px;margin-top:40px;"><u>Forgot password</u></a>
+        </tr>
+    <tr>
+      <th>
+        <button class="btn-grad" type="submit">
+          LOGIN
+        </button>
+      </th>
+    </tr>
+
+  </table>
+
+</form>
+</div>
+</body>
+</html>

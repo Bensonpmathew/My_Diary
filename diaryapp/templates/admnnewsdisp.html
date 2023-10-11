@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+   <style>
+   body{background-color: #85FFBD;
+background-image: linear-gradient(90deg, #85FFBD 0%, #FFFB7D 100%);
+}
+        #a{height: 60px;width: 190px;padding-left:60px;padding-top:20px;margin-left:140px;}
+        #h{margin-left:410px;padding-top:50px;margin-top:10px;width: 950px;height:400px;}
+
+    </style>
+<script src="https://kit.fontawesome.com/db6eb46503.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<body style="background-color:">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid" style="background-color: palegreen;">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                 <a href="http://127.0.0.1:8000/diaryapp/adminprofile/"> <i class="fa-solid fa-backward fa-fade fa-3x" style="color: #db1414;margin-top:9px;margin-left:90px;"></i></a>
+              <a class="navbar-brand" style="margin-left:170px;" href="" target="_blank"><img src="{% static 'img.png' %}"
+                                                             style="height: 60px;width:130px;"></a>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-left:90px;" href="http://127.0.0.1:8000/diaryapp/indexpage/"target="_blank"><h2>Home</h2></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/diaryapp/regi/" style="margin-left:130px;" target="_blank"><h2>
+                        Register</h2></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-left:130px;" href="http://127.0.0.1:8000/diaryapp/loginind1/" target="_blank"><h2>Login</h2></a>
+                </li>
+
+
+
+            </ul>
+
+            <!--  -->
+
+
+        </div>
+
+    </div>
+</nav>
+
+<table >
+    <h1 style="margin-top:10px;font-size:50px;color:BLACK;" align="center"><b> EVENTS DISPLAY</b></h1>
+
+
+<div id="h" class="row" >
+    {% for i in a %}
+    <div class="col-12" style="margin-bottom:40px;">
+<div class="card" style="width: 550px;background-color:green;">
+  <img id="a" src="{% static 'img.png' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+      <p class="card-text">{{i.date}}</p>
+
+    <h5 class="card-title">{{i.topic}}</h5>
+    <p class="card-text">{{i.content}}</p>
+
+<!--<i class="fa-solid fa-thumbs-up fa-fade fa-3x"></i>-->
+<!--      <i class="fa-solid fa-heart fa-flip fa-3x"></i>-->
+<!--      <i class="fa-solid fa-bookmark fa-shake fa-3x"></i>-->
+      <a href="http://127.0.0.1:8000/diaryapp/admnNewsedit/{{i.id}}" style="height:40px;width:130px;margin-left: 10px;margin-top:10px;" class="btn btn-warning" type="submit">Edit</a>
+      <a href="http://127.0.0.1:8000/diaryapp/admnNewsdelete/{{i.id}}" style="height:40px;width:130px;margin-left: 10px;margin-top:10px;" class="btn btn-danger" type="submit">Delete</a>
+  </div>
+    </div>
+      </div>
+    {% endfor %}
+</div>
+</table>
+
+
+
+
+</body>
+</html>
